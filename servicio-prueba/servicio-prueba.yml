@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-prueba-pod
+  labels:
+    app: servicio-prueba
+spec:
+  containers:
+    - name: servicio-prueba-container
+      image: heroslaver/servicio-prueba:latest
+      ports:
+        - containerPort: 3001
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-prueba-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3001
+      protocol: TCP
+  selector:
+    app: servicio-prueba
