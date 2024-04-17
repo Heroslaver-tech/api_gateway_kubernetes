@@ -4,6 +4,7 @@ metadata:
   name: servicio-4-pod
   labels:
     app: servicio-4
+spec:
   containers:
     - name: servicio-4-container
       image: hickaro/api_gateway:latest
