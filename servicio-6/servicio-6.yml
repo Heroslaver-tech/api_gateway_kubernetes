@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-6-pod
+  labels:
+    app: servicio-6
+spec:
+  containers:
+    - name: servicio-6-container
+      image: amaranth0x/natalia_api_gateway:latest
+      ports:
+        - containerPort: 8001
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-6-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8001
+      protocol: TCP
+  selector:
+    app: servicio-6
