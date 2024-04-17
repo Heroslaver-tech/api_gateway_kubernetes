@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-2-pod
+  labels:
+    app: servicio-2
+spec:
+  containers:
+    - name: servicio-2-container
+      image: paulrojasg/goapi:2.1
+      ports:
+        - containerPort: 8000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-2-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    app: servicio-2
