@@ -16,6 +16,7 @@
   
 - Etiqueten su imagen con el comando `docker tag nombre_de_tu_imagen:latest nombre_de_tu_perfil_en_dockerHub/nombre_de_tu_imagen:latest`.
 - Subanlo con `docker push nombre_de_tu_perfil_en_dockerHub/nombre_de_tu_imagen:latest`.
+- Actualicen la imagen en el Dockerfile 
 
 ## Ya subido podemos ejecutar el kubernetes.
 >Prendanlo si aún no lo han hecho.
