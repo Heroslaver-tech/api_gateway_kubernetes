@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # Copia el archivo del proyecto al contenedor
 COPY ./servicio-6.js ./
 
+
 # Instala Express
 RUN npm init -y
 RUN npm install express
