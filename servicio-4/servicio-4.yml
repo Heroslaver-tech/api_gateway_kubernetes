@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-4-pod
+  labels:
+    app: servicio-4
+  containers:
+    - name: servicio-4-container
+      image: hickaro/api_gateway:latest
+      ports:
+        - containerPort: 3001
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-4-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3001
+      protocol: TCP
+  selector:
+    app: servicio-4
