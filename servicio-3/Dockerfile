@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # Copia el archivo del proyecto al contenedor
 COPY ./servicio-3.js ./
 
-# Instala Express
+# Instala KOA y el router de KOA
 RUN npm init -y
 RUN npm install koa @koa/router
 
