@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3001;
 
-app.get('/servicio-prueba', (req, res) => {
+app.get('/servicio-4', (req, res) => {
   res.json({ mensaje: "Respuesta desde Servicio Prueba, soy Daniel y me gustan los videojuegos" });
 });
 
